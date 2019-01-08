@@ -8,19 +8,21 @@ class CommentList extends Component {
         super(props);
     }
     render() {
+        const {onDelete,commentList} = this.props;
         return(
             <div>
                 {
-                    this.props.commentList.map((comment,index)=>{
-                        return <Comment key={index} comment={comment}/>;
-                    })
+                    commentList.length ? commentList.map((comment,index)=>{
+                        return <Comment key={index} comment={comment} onDelete={onDelete}/>;
+                    }) : null
                 }
             </div>
         );
     }
 }
 CommentList.propTypes = {
-    commentList:PropTypes.array
+    commentList:PropTypes.array,
+    onDelete:PropTypes.func
 };
 
 export default CommentList;
