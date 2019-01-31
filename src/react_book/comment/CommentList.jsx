@@ -12,7 +12,7 @@ class CommentList extends Component {
         return(
             <div>
                 {
-                    commentList.length ? commentList.map((comment,index)=>{
+                    commentList && commentList.length ? commentList.map((comment,index)=>{
                         return <Comment key={index} comment={comment} onDelete={onDelete}/>;
                     }) : null
                 }
