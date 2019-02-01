@@ -19,7 +19,7 @@ class CommentApp extends Component {
     }
     render() {
         const commentList = this._loadComments();
-        return(
+        return(  
             <div className="commentWrapper">
                 <CommentInput onSubmit={this.handleSubmit}/>
                 <CommentList commentList={commentList} onDelete={this.handleDelete}/>
