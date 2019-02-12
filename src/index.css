@@ -133,3 +133,4 @@ code {
   background: #f9f9f9;
   padding: 0px 2px;
 }
+@import url('./components/modal/index.less')

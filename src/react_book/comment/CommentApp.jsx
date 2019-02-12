@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
+import Modal from '../../components/modal/index';
 
-import {getLocalStorage,setLocalStorage} from '../tool';
+import {getLocalStorage,setLocalStorage,_body} from '../tool';
 
 import CommentInput from './CommentInput.jsx';
 import CommentList from './CommentList.jsx';
+
 
 class CommentApp extends Component {
     constructor() {
@@ -35,8 +37,16 @@ class CommentApp extends Component {
     }
     handleSubmit(value) {
         if(!value) return;
-        if(!value.username) return alert('请输入用户名');
-        if(!value.content) return alert('请输入评论内容');        
+        if(!value.username) return new Modal(_body,{
+            title:'提示',
+            content:'请输入用户名!',
+            showFooter:true,
+        }).show();
+        if(!value.content) return new Modal(_body,{
+            title:'提示',
+            content:'请输入评论内容!',
+            showFooter:true,
+        }).show();        
         let commentList = this._loadComments();
         commentList.push(value);
         // 更新render

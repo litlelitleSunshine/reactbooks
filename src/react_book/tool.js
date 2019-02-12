@@ -1,6 +1,9 @@
 'use strict';
+import $ from 'jquery';
 
 export const ONE_DAY_MILL = 24 * 60 * 60 * 1000;
+
+export const _body = $('body');
 
 // 设置localStorage(key:健，values:健值，expire:过期时间)
 // 默认缓存时间1天
